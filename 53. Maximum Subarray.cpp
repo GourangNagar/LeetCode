@@ -1,3 +1,31 @@
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+       int n = nums.size();
+        
+        int pos=0;;
+        for(auto x : nums)
+            if(x>=0)
+            pos++;
+           
+        if(pos!=0)
+        {
+            int sum=0,max=nums[0];
+            for(int i = 0 ; i< n ; i++)
+            {
+            sum+=nums[i];
+            if(sum<0)
+                sum=0;
+            if(sum>=max)
+                max=sum;
+            }
+        return max;
+            
+        }
+        else
+            return *max_element(nums.begin(), nums.end());     
+    }
+};
 
 
 
