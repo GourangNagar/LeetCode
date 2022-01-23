@@ -1,6 +1,28 @@
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
+             
+        int sum=nums[0],maax=nums[0];
+        for(int i = 1 ; i<  nums.size();i++)
+        {
+            sum+=nums[i];
+            sum=max(sum,nums[i]);
+            maax=max(sum,maax);
+        }
+        return maax;       
+        
+    }
+};//best
+
+
+
+
+
+
+
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
        int n = nums.size();
         
         int pos=0;;
@@ -26,6 +48,29 @@ public:
             return *max_element(nums.begin(), nums.end());     
     }
 };
+
+
+/* OPTIMIZED VERSION OF ABOVE
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+       int n = nums.size();
+        
+        int sum=nums[0],max=nums[0];
+        for(int i = 1 ; i< n ; i++)
+        {
+            
+            if(sum<0)
+                sum=0;
+            sum+=nums[i];
+            if(sum>=max)
+                max=sum;
+        }
+        return max;       
+        
+    }
+};
+*/
 
 
 
