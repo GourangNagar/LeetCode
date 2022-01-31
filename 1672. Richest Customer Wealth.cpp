@@ -14,3 +14,18 @@ public:
         return max;
     }
 };
+
+
+
+
+
+class Solution {
+public:
+    int maximumWealth(vector<vector<int>>& accounts) {
+        int m = 0;
+        for(auto customer: accounts)
+            m = max(m, accumulate(customer.begin(), customer.end(), 0));
+
+        return m;
+    }
+};
