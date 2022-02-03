@@ -12,7 +12,7 @@ public:
         if (arr[0]>0) 
             return vec;
 
-        for(int l=0;l<n-2;i++)
+        for(int l=0;l<n-2;l++)
         {
                     
         int h=n-1;
