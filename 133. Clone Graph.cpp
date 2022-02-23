@@ -23,9 +23,8 @@ class Solution {
 public:
     Node* cloneGraph(Node* node) {
         if(!node) return NULL;
-        Node* clone = new Node(node->val);
         unordered_map<Node*,Node*> mp;
-        mp[node] =clone;
+        mp[node] = new Node(node->val);
         queue<Node*> q;
         q.push(node);
         while(!q.empty())
@@ -39,10 +38,9 @@ public:
                     mp[side]=new Node(side->val);
                     q.push(side);
                 }
-            mp[temp]->neighbors.push_back(mp[side]);
+             mp[temp]->neighbors.push_back(mp[side]);
             }
         }
         return mp[node];
-        
     }
 };
