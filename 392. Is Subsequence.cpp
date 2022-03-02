@@ -1,5 +1,25 @@
 class Solution {
 public:
+    bool isSubsequence(string s, string t) {
+        int count=0;
+        for(int j=0 ; count<s.size() , j<t.size() ; j++)
+            if(s[count]==t[j])
+                count++;
+        return count==s.size();
+        
+    }
+};
+
+
+
+
+
+
+
+
+
+class Solution {
+public:
     
     bool isSubs(string& s, string& t, int n, int m)
     {
